@@ -10,6 +10,49 @@
     <script src="https://kit.fontawesome.com/b8b325b13d.js" crossorigin="anonymous"></script>
     <title>Hotel V Grand | Welcome</title>
 </head>
+<style>
+   
+  #cart {
+    display: flex;
+    overflow-x: auto;
+  }
+  
+  .item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    margin-right: 20px;
+    gap: 2px;
+   
+  }
+  .item > img{
+    width:200px;
+    height:300px;
+    /* z-index: -1; */
+  }
+  .item >p{
+    z-index: -1;
+    margin-top:-50px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .item {
+      width: 150px;
+      height: 225px;
+    }
+   
+  }
+  @media (max-width:468px){
+    .item>p{
+        margin-top: -120px;
+    }
+  }
+</style>
+
+
 <body>
     <header>
         <nav id="navbar">
@@ -52,6 +95,14 @@
         </div>
         
     </section>
+    <div id="cart">
+        <!-- <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221__340.jpg" alt="">
+            <p>hgfgf</p>
+        </div>
+        -->
+       
+      </div>
 
     <section id="features">
         <div class="box bg-light"> 
@@ -79,3 +130,107 @@
     </footer>
 </body>
 </html>
+
+<script>
+    
+    const data=[
+        {
+            img:"https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"25000"
+        },
+        {
+            img:"https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"15000"
+        },
+        {
+            img:"https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"15500"
+        },
+        {
+            img:"https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"17000"
+        },
+        {
+            img:"https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"19000"
+        },
+        {
+            img:"https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"27000"
+        },
+        {
+            img:"https://images.pexels.com/photos/833045/pexels-photo-833045.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"35000"
+        },
+        {
+            img:"https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"11000"
+        },
+        {
+            img:"https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"14000"
+        },
+        {
+            img:"https://images.pexels.com/photos/3754595/pexels-photo-3754595.jpeg?auto=compress&cs=tinysrgb&w=600",
+            price:"16500"
+        },
+        {
+            img:"https://images.pexels.com/photos/3754594/pexels-photo-3754594.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"15000"
+        },
+        {
+            img:"https://images.pexels.com/photos/3144580/pexels-photo-3144580.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"35000"
+        },
+        {
+            img:"https://images.pexels.com/photos/244133/pexels-photo-244133.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"22500"
+        },
+        {
+            img:"https://images.pexels.com/photos/2873951/pexels-photo-2873951.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"19500"
+        },
+        {
+            img:"https://images.pexels.com/photos/265947/pexels-photo-265947.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"19000"
+        },
+        {
+            img:"https://images.pexels.com/photos/4457041/pexels-photo-4457041.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"16000"
+        },
+        {
+            img:"https://images.pexels.com/photos/2029698/pexels-photo-2029698.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"25000"
+        },
+        {
+            img:"https://images.pexels.com/photos/271614/pexels-photo-271614.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"13500"
+        },
+        {
+            img:"https://images.pexels.com/photos/3688261/pexels-photo-3688261.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"15000"
+        },
+        {
+            img:"https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"25000"
+        },
+        {
+            img:"https://images.pexels.com/photos/3201762/pexels-photo-3201762.jpeg?auto=compress&cs=tinysrgb&w=400",
+            price:"20000"
+        },
+        ];
+
+        const dom=(data)=>{
+            data.map((e)=>{
+                let item=document.createElement('div');
+                item.setAttribute("class","item");
+                let img=document.createElement("img");
+                img.setAttribute("src",e.img);
+                let price=document.createElement("p");
+                price.innerHTML=`${e.price} INR`;
+                item.append(img,price);
+               document.getElementById("cart").appendChild(item)
+            })
+        }
+    dom(data)
+</script>
