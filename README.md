@@ -6,6 +6,6 @@ By seeing the demo link you can view about the Hotel V Grand hotel.
 
 You can see about the hotel and view some of Rooms.
 
-a simple web application wi fully responsive on all the devices.
+a simple web application with fully responsiveness on all the devices.
 
 
